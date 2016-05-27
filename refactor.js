@@ -84,7 +84,7 @@ console.log("The letter is", letter);
 
 // Put your answer below -------------------------
 
-
+// The answer is [c]. "z" comes before "y" because of the setTimeout which times out after 1.
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -121,34 +121,44 @@ var reverseStr = function(str) {
 // Refactor this function to use an object
 // instead of an if/else statement.
 
-var spanishColor = function(colorName) {
-  if (colorName.toLowerCase() === "rojo") {
-    return "#ff0000";
-  }
-  else if (colorName.toLowerCase() === "blanco") {
-    return "#ffffff";
-  }
-  else if (colorName.toLowerCase() === "azul") {
-    return "#0000ff";
-  }
-  else if (colorName.toLowerCase() === "verde") {
-    return "#00ff00";
-  }
-  else if (colorName.toLowerCase() === "negro") {
-    return "#000000";
-  }
-};
+
 
 // Put your answer below -------------------------
-var spanishColor = function (colorName) {
-  rojo: "#ff0000", blanco: "#ffffff", azul: "#0000ff", verde: "#00ff00", negro: "#000000"
-};
-// This is just me trying something??
 
+function spanishColorUsingObject (spanishColorName) {
+var colorObject = {
+  rojo: "#ff0000",
+  blanco: "#ffffff",
+  azul: "#0000ff",
+  verde: "#00ff00",
+  negro: "#000000"
+  }
+  return colorObject[spanishColorName]
+}
 // -----------------------------------------------
 
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
+//
+
+// Inputs: list of student names.
+//
+// Output: one random student name.
+// // var arr = [1,2,3,4,5,7]
+// // arr [2]
+// students [10] === undefined;
+// Math.random() === number between 0 and 1
+// students.length = 10
+// students.length - 1 = last index of array;
+// Math.floor();
+//
+// var students = ['damon','phillip','winston','amanda','caleb','geoff','gabe','logan','riggan','david']
+//
+// function randomStudent (anyListOfStudents) {
+//   var randomNum = Math.random(); //number between 0 and 1
+//   var lengthOfStudentList = anyListOfStudents.length; //total number of students in the array
+//   // var lastIndexOfStudentList = lengthOfStudentList - 1; //last index of the array
+//   var guessNumber = Math.floor (randomNum * lengthOfStudentList)
+//   return anyListOfStudents[guessNumber];
+// }
 
 // 6. --------------------------------------------
 
@@ -162,7 +172,7 @@ var foo = "bar";
 // Put your answer below -------------------------
 
 var foo;
-var foo = "bar";
+foo = "bar";
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -184,8 +194,9 @@ var callTenTimes = function(callback) {
 
 // Put your answer below -------------------------
 
-var callTenTimes = function (callNtimes) {
-  // ???
+var callNtimes = function(callback) {
+  var range = _.range(n);
+  _.each(range, callback);
 }
 // -----------------------------------------------
 
@@ -218,7 +229,6 @@ var increaseScore = function() {
   var score = 0;
   score++;
 };
-
 var decreaseScore = function() {
   score--;
 };
@@ -237,18 +247,15 @@ var decreaseScore = function() {
 var addNumbers = function(numberA, numberB) {
   console.log(numberA + numberB);
 };
-
 var twoPlusTwo = addNumbers(2,2);
 
 // Put your answer below -------------------------
 
 var addNumbers = function(numberA, numberB) {
-  var twoPlusTwo = ???
-  console.log(numberA + numberB);
+  var twoPlusTwo = 0
+  return(numberA + numberB);
 };
-
 var twoPlusTwo = addNumbers(2,2);
-
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -273,6 +280,15 @@ var accelerate = function(amount) {
 };
 
 // Put your answer below -------------------------
+// It sets "amount" to NaN because "amount" is undefined.
+var speed = 0
+var accelerate = function(amount) {
+    if(amount === undefined) {
+      amount += 1
+    } else {
+      speed += amount
+  }
+}
 
 
 // -----------------------------------------------

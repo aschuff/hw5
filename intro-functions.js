@@ -104,18 +104,16 @@ console.assert(isVowel("E") === true);
  * return the string "tothohisos isos fofunon".
 
  */
-
 function rovarspraket(text){
-  for (var i=0; i < text.length; i ++) {
-    console.log (text[i])
-   if (isVowel(text)) {
-     return text;
-   } else {
-     return text + "o" + text;
-   }
- }
-  }
-// I don't really under stand this and it still returns two errors ^^^
+var translateWord =text.split("").map(function(element,idx,arr){
+  if(isVowel(element)) {
+      return element
+    } else {
+      return element + "o" + element
+    }
+  });
+  return translateWord.join("");
+}
 
 console.assert(rovarspraket("a") === "a")
 console.assert(rovarspraket("b") === "bob")
@@ -133,8 +131,7 @@ console.assert(rovarspraket(0) === "0")
  */
 
 function reverse(str){
-    return str.split("").reverse().join("");
-
+    return str.split("").reverse().join("")
 }
 
 
@@ -151,7 +148,14 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
  */
 
 function findLongestWord(sentence){
-    // YOUR CODE HERE
+    var sentenceSplitOnSpaces = sentence.replace("'","").split(" ");
+    var longestWord = "";
+    for (var i = 0; i < sentenceSplitOnSpaces.length; i++) {
+      if(longestWord.length < sentenceSplitOnSpaces[i].length) {
+        longestWord = sentenceSplitOnSpaces[i];
+      }
+    }
+    return longestWord;
 }
 
 console.assert(findLongestWord("book dogs") === "book")
