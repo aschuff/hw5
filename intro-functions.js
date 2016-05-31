@@ -105,7 +105,7 @@ console.assert(isVowel("E") === true);
 
  */
 function rovarspraket(text){
-var translateWord =text.split("").map(function(element,idx,arr){
+var translateWord = text.split("").map(function(element,idx,arr){
   if(isVowel(element)) {
       return element
     } else {
